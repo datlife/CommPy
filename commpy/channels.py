@@ -98,6 +98,7 @@ def awgn(input_signal, snr_dB, rate=1.0):
         noise = (sqrt(noise_variance) * randn(len(input_signal))) + (sqrt(noise_variance) * randn(len(input_signal))*1j)
     else:
         noise = sqrt(2*noise_variance) * randn(len(input_signal))
+        input_signal = 2.0 * input_signal - 1.0
 
     output_signal = input_signal + noise
 
